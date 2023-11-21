@@ -20,14 +20,14 @@ export default function LoginPage(props) {
       <div className='login-container'>
         <h2 className='login-title'>Enter Your Username Below</h2>
         <form onSubmit={handleSubmit}>
+          <div className='input-group'>
             <label>User Name</label>
-            <div>
-                <input 
-                    type='text'
-                    onChange={handleChange}
-                />
-            </div>
-            <button type='submit'>Sign In</button>
+            <input 
+              type='text'
+              onChange={handleChange}
+            />
+          </div>
+          <button type='submit' className='login-button'>Sign In</button>
         </form>
       </div>
     </div>

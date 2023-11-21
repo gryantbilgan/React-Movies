@@ -1,17 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar({ user }) {
   return (
-    <div className='NavBar'>
-            <div>
-                <p>Welcome {user}!</p>
-                <nav>
-                    <Link to="/">Movies</Link>
-                    &nbsp; | &nbsp;
-                    <Link to="/actors">Actors</Link>
-                </nav>
-            </div>
+    <div className="flex-container">
+        <p>Welcome {user}!</p>
+        <NavLink className="flex-item" to="/">
+          <button className="btn fourth">Movies</button>
+        </NavLink>
+        <NavLink className="flex-item" to="/actors">
+          <button className="btn fourth">Actors</button>
+        </NavLink>
     </div>
-  )
+  );
 }
