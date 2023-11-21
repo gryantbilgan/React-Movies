@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import './LoginPage.css'
 
 export default function LoginPage(props) {
 
@@ -13,25 +14,22 @@ export default function LoginPage(props) {
         event.preventDefault()
         props.setUser(inputValue)
     }
-    
-    //   const handleLogout = () => {
-    //     setUser(null)
-    //   }
 
   return (
-    <div>
-        <h2>Enter Your Username Turkey</h2>
+    <div className='Login-Screen'>
+      <div className='login-container'>
+        <h2 className='login-title'>Enter Your Username Below</h2>
         <form onSubmit={handleSubmit}>
-            <label>UserTurkey</label>
+            <label>User Name</label>
             <div>
                 <input 
                     type='text'
-                    placeholder="Gobble Gobble Y'all"
                     onChange={handleChange}
                 />
             </div>
             <button type='submit'>Sign In</button>
         </form>
+      </div>
     </div>
   )
 }

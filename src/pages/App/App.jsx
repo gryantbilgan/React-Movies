@@ -5,7 +5,8 @@ import ActorListPage from '../ActorListPage/ActorListPage';
 import LoginPage from '../LoginPage/LoginPage';
 import MovieDetailPage from '../MovieDetailPage/MovieDetailPage';
 import MoviesListPage from '../MoviesListPage/MoviesListPage';
-import NavBar from '../../components/NavBar'
+import NavBar from '../../components/NavBar/NavBar'
+import { movies } from '../../data.js'
 
 export default function App() {
 
@@ -18,9 +19,9 @@ export default function App() {
           <>
             <NavBar user={user} />
             <Routes>
-              <Route path="/" element={<MoviesListPage />} />
-              <Route path="/movies/:movieName" element={<MovieDetailPage />} />
-              <Route path="/actors" element={<ActorListPage />} />
+              <Route path="/" element={<MoviesListPage movies={movies} />} />
+              <Route path="/movies/:movieName" element={<MovieDetailPage movies={movies} />} />
+              <Route path="/actors" element={<ActorListPage movies={movies} />} />
             </Routes>
           </>
         ) : 
